@@ -23,18 +23,22 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
                     cards[potentialMatchIndex].isMatched = true
                     score += 2
                 }
-                indexOfTheOneAndOnlyFaceUpCard = nil
-                if cards[chosenIndex].isMatched == false && cards[chosenIndex].previouslySeen == true {
-                    score -= 1
+                if cards[chosenIndex].previouslySeen == true && cards[potentialMatchIndex].previouslySeen == true {
+                    score -= 2
                 }
+                indexOfTheOneAndOnlyFaceUpCard = nil
+                cards[chosenIndex].previouslySeen = true
+
+                
             } else {
                 for index in cards.indices { cards[index].isFaceUp = false }
                 indexOfTheOneAndOnlyFaceUpCard = chosenIndex
                 cards[chosenIndex].previouslySeen = true
+                
             }
         cards[chosenIndex].isFaceUp.toggle()
         }
-        print("\(cards)")
+        print(cards)
     }
     
     init(numberOfPairsOfCards: Int, createCardContent: (Int) -> CardContent) {

@@ -15,7 +15,6 @@ var body: some View {
             Text(viewModel.themeName).font(.largeTitle)
             Spacer()
             VStack{
-//                Button("New Game") { viewModel.newGame() }
                 Text("Score")
                 Text("\(viewModel.score)")
             }
