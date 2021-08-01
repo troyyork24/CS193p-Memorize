@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct A1ContentView: View {
+struct ContentView: View {
     @State var themeSelector: EmojiThemes = .car
     var body: some View {
         VStack {
@@ -114,8 +114,8 @@ struct CardView: View {
         }
     }
 }
-struct A1ContentView_Previews: PreviewProvider {
+struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        A1ContentView()
+        ContentView()
     }
 }
